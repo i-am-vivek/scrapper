@@ -1,0 +1,34 @@
+html(lang="en")
+	head
+		script(src="js/angular/angular.min.js")
+		script(src="js/angular/angular.min.js")
+		script(src="js/angular/angular-route.min.js")
+		script(src="js/client-controller.js")
+	body(ng-app="Task",ng-controller="Hashcontroller")
+		table(border="1")
+			tr
+				th TAG
+				th Description
+				th Answered
+				th Created
+				th Viewed
+				th Active
+				th Editors
+				th Action
+			tr(ng-repeat="x in Hashes")
+				td 
+					| {{x.tag}}
+				td 
+					| {{x.title}}
+				td 
+					| {{x.answered}}
+				td 
+					| {{x.created}}
+				td 
+					| {{x.viewed}}
+				td 
+					| {{x.active}}
+				td 
+					| {{x.editors}}
+				td 
+					button(ng-click="UpdateHash(x.tag)") Update
